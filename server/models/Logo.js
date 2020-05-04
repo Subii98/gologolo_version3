@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+//add all properties of logo
 var LogoSchema = new mongoose.Schema({
   id: String,
   text: String,

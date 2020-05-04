@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import gql from 'graphql-tag';
 import { Query, Mutation } from 'react-apollo';
-
+//add all logo properties
 const GET_LOGO = gql`
     query logo($logoId: String) {
         logo(id: $logoId) {
@@ -29,7 +29,7 @@ const DELETE_LOGO = gql`
     }
   }
 `;
-
+//show all properties of logo
 class ViewLogoScreen extends Component {
 
     render() {
@@ -48,9 +48,10 @@ class ViewLogoScreen extends Component {
                                         View Logo
                                     </h3>
                                 </div>
+                                
                                 <div className="panel-body">
                                     <dl>
-                                    
+                                        
                                         <dt>Text:</dt>
                                         <dd>{data.logo.text}</dd>
                                         <dt>Color:</dt>

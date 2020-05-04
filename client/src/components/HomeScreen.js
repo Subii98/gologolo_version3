@@ -13,7 +13,7 @@ const GET_LOGOS = gql`
     }
   }
 `;
-
+//change create link to create button
 class HomeScreen extends Component {
 
     render() {

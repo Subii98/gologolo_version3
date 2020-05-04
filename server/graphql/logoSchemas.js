@@ -9,6 +9,7 @@ var GraphQLInt = require('graphql').GraphQLInt;
 var GraphQLDate = require('graphql-date');
 var LogoModel = require('../models/Logo');
 
+//add all properties of logo
 var logoType = new GraphQLObjectType({
     name: 'logo',
     fields: function () {
@@ -83,7 +84,7 @@ var queryType = new GraphQLObjectType({
         }
     }
 });
-
+//add logo and edit logo
 var mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: function () {
