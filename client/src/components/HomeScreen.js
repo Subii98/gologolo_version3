@@ -15,7 +15,7 @@ const GET_LOGOS = gql`
 `;
 //change create link to create button
 class HomeScreen extends Component {
-
+    
     render() {
         return (
             <Query pollInterval={500} query={GET_LOGOS}>

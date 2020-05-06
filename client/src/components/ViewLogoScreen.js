@@ -51,7 +51,6 @@ class ViewLogoScreen extends Component {
                                 </div>
                                 <div class="row"> 
                                 <div class="col-6"> 
-                            
                                 <div className="panel-body">
                                     <dl>
                                         

@@ -30,9 +30,65 @@ const ADD_LOGO = gql`
 `;
 
 class CreateLogoScreen extends Component {
-
+    state={
+        ncolor:"black",
+        ntext: "gologolo",
+        nfontSize: 10,
+        nbackgroundColor: "black",
+        nborderColor: "black",
+        nborderRadius: 1,
+        nborderWidth: 1,
+        npadding: 1,
+        nmargin: 1
+    }
+    handleColorChange=(e)=>{
+        this.setState({
+            ncolor:e.target.value
+        })
+    }
+    handleTextChange=(e)=>{
+        this.setState({
+            ntext:e.target.value
+        })
+    }
+    handleBackgroundColorChange=(e)=>{
+        this.setState({
+            nbackgroundColor:e.target.value
+        })
+    }
+    handleFontSizeChange=(e)=>{
+        this.setState({
+            nfontSize:e.target.value
+        })
+    }
+    handleBorderColorChange=(e)=>{
+        this.setState({
+            nborderColor:e.target.value
+        })
+    }
+    handleBorderWidthChange=(e)=>{
+        this.setState({
+            nborderWidth:e.target.value
+        })
+    }
+    handleBorderRadiusChange=(e)=>{
+        this.setState({
+            nborderRadius:e.target.value
+        })
+    }
+    handlePaddingChange=(e)=>{
+        this.setState({
+            npadding:e.target.value
+        })
+    }
+    handleMarginChange=(e)=>{
+        this.setState({
+            nmargin:e.target.value
+        })
+    }
     render() {
         let text, color, fontSize, backgroundColor, borderColor, borderRadius, borderWidth, padding, margin;
+        
         return (
             <Mutation mutation={ADD_LOGO} onCompleted={() => this.props.history.push('/')}>
                 {(addLogo, { loading, error }) => (
@@ -44,6 +100,8 @@ class CreateLogoScreen extends Component {
                                     Create Logo
                             </h3>
                             </div>
+                            <div class="row"> 
+                            <div class="col-6">
                             <div className="panel-body">
                                 <form onSubmit={e => {
                                     e.preventDefault();
@@ -63,55 +121,64 @@ class CreateLogoScreen extends Component {
                                 }}>
                                     <div className="form-group">
                                         <label htmlFor="text">Text:</label>
-                                        <input type="text" className="form-control" name="text" ref={node => {
+                                        <input type="text" onChange={this.handleTextChange}
+                                         className="form-control" name="text" ref={node => {
                                             text = node;
                                         }} placeholder="Text" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="color">Color:</label>
-                                        <input type="color" className="form-control" name="color" ref={node => {
+                                        <input type="color" onChange={this.handleColorChange}
+                                         className="form-control" name="color" ref={node => {
                                             color = node;
-                                        }} placeholder="Color" />
+                                        }} placeholder="Color"/>  
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="backgroundColor">Background color:</label>
-                                        <input type="color" className="form-control" name="backgroundColor" ref={node => {
+                                        <input type="color" onChange={this.handleBackgroundColorChange}
+                                        className="form-control" name="backgroundColor" ref={node => {
                                             backgroundColor = node;
                                         }} placeholder="backgroundColor" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="fontSize">Font Size:</label>
-                                        <input type="number" className="form-control" name="fontSize" ref={node => {
+                                        <input type="number" onChange={this.handleFontSizeChange}
+                                         className="form-control" name="fontSize" ref={node => {
                                             fontSize = node;
                                         }} placeholder="Font Size" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderColor">Border Color:</label>
-                                        <input type="color" className="form-control" name="borderColor" ref={node => {
+                                        <input type="color" onChange={this.handleBorderColorChange}
+                                         className="form-control" name="borderColor" ref={node => {
                                             borderColor = node;
                                         }} placeholder="borderColor" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderRadius">Border Radius:</label>
-                                        <input type="number" className="form-control" name="borderRadius" ref={node => {
+                                        <input type="number" onChange={this.handleBorderRadiusChange}
+                                        className="form-control" name="borderRadius" ref={node => {
                                             borderRadius = node;
                                         }} placeholder="Border Radius" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderWidth">Border Width:</label>
-                                        <input type="number" className="form-control" name="borderWidth" ref={node => {
+                                        <input type="number" onChange={this.handleBorderWidthChange}
+                                        className="form-control" name="borderWidth" ref={node => {
                                             borderWidth = node;
                                         }} placeholder="Border Width" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="padding">Padding:</label>
-                                        <input type="number" className="form-control" name="padding" ref={node => {
+                                        <label htmlFor="padding">Padding:</label> 
+                                        <input type="number" onChange={this.handlePaddingChange}
+                                         className="form-control" name="padding" ref={node => {
                                             padding = node;
                                         }} placeholder="padding" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="margin">Margin Size:</label>
-                                        <input type="number" className="form-control" name="margin" ref={node => {
+                                        <input type="number" onChange={this.handleMarginChange}
+                                         className="form-control" name="margin" ref={node => {
                                             margin = node;
                                         }} placeholder="margin" />
                                     </div>
@@ -119,6 +186,16 @@ class CreateLogoScreen extends Component {
                                 </form>
                                 {loading && <p>Loading...</p>}
                                 {error && <p>Error :( Please try again</p>}
+                            </div>
+                            </div>
+                            <div class="col-6">
+                            <div style={{color:this.state.ncolor, backgroundColor:this.state.nbackgroundColor, 
+                                    fontSize:this.state.nfontSize+"pt", borderColor:this.state.nborderColor, 
+                                    borderRadius:this.state.nborderRadius+"px",borderWidth:this.state.nborderWidth+"px",
+                                    padding:this.state.npadding+"px",margin:this.state.nmargin+"px", borderStyle:"solid",
+                                    text: this.state.ntext
+                                    }}>{this.state.ntext}</div>
+                            </div>
                             </div>
                         </div>
                     </div>

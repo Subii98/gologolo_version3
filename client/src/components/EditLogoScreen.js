@@ -70,10 +70,10 @@ class EditLogoScreen extends Component {
                                             <h4><Link to="/">Home</Link></h4>
                                             <h3 className="panel-title">
                                                 Edit Logo
-                                                
-                                        </h3>
+                                            </h3>
                                         </div>
-                                        
+                                        <div class="row"> 
+                                        <div class="col-6">
                                         <div className="panel-body">                                            
                                             <form onSubmit={e => {
                                                 e.preventDefault();
@@ -91,14 +91,6 @@ class EditLogoScreen extends Component {
                                                 padding.value="";
                                                 margin.value="";
                                             }}>
-                                                
-                                                <div style={{color:data.logo.color, backgroundColor:data.logo.backgroundColor, fontSize:data.logo.fontSize+"pt",
-                                                borderColor:data.logo.borderColor, borderRadius:data.logo.borderRadius+"px",
-                                                borderWidth:data.logo.borderWidth+"px",padding:data.logo.padding+"px",
-                                                margin:data.logo.margin+"px", borderStyle:"solid",
-                                                text: data.logo.text
-                                                }}>
-                                                    {data.logo.text}</div>
                                                 <div className="form-group">
                                                     <label htmlFor="text">Text:</label>
                                                     <input type="text" onChange={() => {data.logo.text = text.value; this.setState({text: this.value})}}  className="form-control" name="text" ref={node => {
@@ -163,6 +155,16 @@ class EditLogoScreen extends Component {
                                             </form>
                                             {loading && <p>Loading...</p>}
                                             {error && <p>Error :( Please try again</p>}
+                                        </div>
+                                        </div>
+                                        <div class="col-6"> <div style={{color:data.logo.color, backgroundColor:data.logo.backgroundColor, fontSize:data.logo.fontSize+"pt",
+                                                borderColor:data.logo.borderColor, borderRadius:data.logo.borderRadius+"px",
+                                                borderWidth:data.logo.borderWidth+"px",padding:data.logo.padding+"px",
+                                                margin:data.logo.margin+"px", borderStyle:"solid",
+                                                text: data.logo.text
+                                                }}>
+                                                    {data.logo.text}</div> 
+                                        </div> 
                                         </div>
                                     </div>
                                 </div>
