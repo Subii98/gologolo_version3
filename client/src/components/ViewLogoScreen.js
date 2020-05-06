@@ -41,6 +41,7 @@ class ViewLogoScreen extends Component {
 
                     return (
                         <div className="container">
+                            
                             <div className="panel panel-default">
                                 <div className="panel-heading">
                                     <h4><Link to="/">Home</Link></h4>
@@ -48,7 +49,9 @@ class ViewLogoScreen extends Component {
                                         View Logo
                                     </h3>
                                 </div>
-                                
+                                <div class="row"> 
+                                <div class="col-6"> 
+                            
                                 <div className="panel-body">
                                     <dl>
                                         
@@ -89,6 +92,15 @@ class ViewLogoScreen extends Component {
                                             </div>
                                         )}
                                     </Mutation>
+                                </div>
+                                </div> 
+                                <div class="col-6"> <div style={{color:data.logo.color, backgroundColor:data.logo.backgroundColor, fontSize:data.logo.fontSize+"pt",
+                                                borderColor:data.logo.borderColor, borderRadius:data.logo.borderRadius+"px",
+                                                borderWidth:data.logo.borderWidth+"px",padding:data.logo.padding+"px",
+                                                margin:data.logo.margin+"px", borderStyle:"solid",
+                                                text: data.logo.text
+                                                }}>
+                                                    {data.logo.text}</div> </div> 
                                 </div>
                             </div>
                         </div>
