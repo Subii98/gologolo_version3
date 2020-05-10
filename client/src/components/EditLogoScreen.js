@@ -48,7 +48,8 @@ const UPDATE_LOGO = gql`
         }
 `;
 
-
+// Can change all information about logos
+// Show logos and how it changes while editing
 class EditLogoScreen extends Component {
     
     render() {

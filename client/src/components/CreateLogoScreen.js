@@ -29,6 +29,9 @@ const ADD_LOGO = gql`
     }
 `;
 
+//Create logo with properties
+//While creating, can see how logo changes
+
 class CreateLogoScreen extends Component {
     state={
         ncolor:"black",

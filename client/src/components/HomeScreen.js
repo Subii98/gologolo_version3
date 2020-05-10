@@ -14,6 +14,7 @@ const GET_LOGOS = gql`
   }
 `;
 //change create link to create button
+//Show logolist 
 class HomeScreen extends Component {
     
     render() {
