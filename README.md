@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 When you open browser, you can create, edit, and delete logos. Also, while creating and editing, you can see how your logo will change. 
 If you connect to [http://localhost:3000/graphql] you can check your logos are saved correctly. You can also check does your logo well deleted, edited, and queried.
+
+
 Use this code to check it.
 
 {
